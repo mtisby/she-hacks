@@ -1,0 +1,2 @@
+firstName = [ Eloise, Aurelia, Ava, Rose, Maeve, Esme, Eleanor, Imogen, Aurora, Ophelia, Freya, Luna, Alice, Iris, Ivy, Isla, Olivia, Hazel, Astrid, Amelia, Genevieve, Charlotte, Aria, Elodie, Violet, Sienna, Cora, Nora, Ottilie, Daphne]
+lastName = [Johnson,Williams,Brown,Jones,Garcia,Miller,Davis,Rodriguez,Martinez,Hernandez,Lopez,Gonzalez,Wilson,Anderson,Thomas,Taylor,Moore,Jackson,Martin,Lee,Perez,Thompson,White,Harris,Sanchez,Clark,Ramirez,Lewis,Robinson]
