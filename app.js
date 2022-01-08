@@ -21,9 +21,13 @@ import LocalStrategy from 'passport-local'
 import methodOverride from "method-override"
 import ejsMate from 'ejs-mate';
 import { fileURLToPath } from 'url';
-import flash from "connect-flash"
+import { dirname } from 'path';
+import flash from "connect-flash";
 
-const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/she-hacks';
+/* model */
+import { User } from './models/user.js'
+
+const dbUrl = process.env.DB_URL ||'mongodb://localhost:27017/she-hacks';
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
@@ -90,21 +94,18 @@ app.use((req, res, next) => {
     next();
 })
 
-//app.use('/', userRoutes)
-
-
 app.get('/', (req, res) => {
-    res.render('./home')
+    res.render('./home.ejs')
 })
 
-app.all('*', (req, res, next) => {
-    next(new ExpressError('Page Not Found', 404))
-})
+// app.all('*', (req, res, next) => {
+//     next(new ExpressError('Page Not Found', 404))
+// })
 
-app.use((err, req, res, next) => {
-    const { statusCode = 500, message = "something went wrong" } = err;
-    res.status(statusCode).render('error.ejs', {err})
-})
+// app.use((err, req, res, next) => {
+//     const { statusCode = 500, message = "something went wrong" } = err;
+//     res.status(statusCode).render('error.ejs', {err})
+// })
 
 app.listen(port, () => {
     console.log(`listening on : ${port}`)
