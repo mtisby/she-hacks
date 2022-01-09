@@ -24,6 +24,14 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+    questionOne: {
+        type: String,
+        required: false
+    },
+    questionTwo: {
+        type: String,
+        required: false
+    },
 });
 
 UserSchema.plugin(passportLocalMongoose);
