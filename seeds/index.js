@@ -25,7 +25,7 @@ db.once("open", () => {
 const seedDB = async () => {
     await User.deleteMany({});
 
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 100; i++) {
         let nameInd = Math.floor(Math.random() * 28);
         let titleInd = Math.floor(Math.random() * 20);
         let schoolInd = Math.floor(Math.random() * 70);
