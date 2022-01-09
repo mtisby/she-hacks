@@ -24,11 +24,19 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    questionOne: {
+    freeTime: {
         type: String,
         required: false
     },
-    questionTwo: {
+    friends: {
+        type: String,
+        required: false
+    },
+    interests: {
+        type: String,
+        required: false
+    },
+    energyLevel: {
         type: String,
         required: false
     },

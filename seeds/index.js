@@ -41,8 +41,10 @@ const seedDB = async () => {
             lastName: lastNames,
             title: data['title'][titleInd],
             school: data['school'][schoolInd],
-            questionOne: data['questionOne'][questionInd],
-            questionTwo: data['questionTwo'][questionInd]
+            freeTime: data['freeTime'][questionInd],
+            freinds: data['friends'][questionInd],
+            interests: data['interests'][questionInd],
+            energyLevel: data['energyLevel'][questionInd]
           })
         await user.save();
     }

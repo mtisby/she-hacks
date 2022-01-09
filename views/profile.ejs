@@ -1,0 +1,14 @@
+<% layout('layouts/generalBP')%>
+
+<div class="margin">
+    <h1>Hi <%=user.username%>!</h1>
+
+    <p>profession: <%=user.title%> </p>
+    <p>interest: <%=user.interests%> </p>
+    <p>hobby: <%=user.freeTime%> </p>
+    <p>school: <%=user.school%> </p>
+
+    <form action="/logout" method="POST">
+        <button>logout</button>
+    </form>
+</div>

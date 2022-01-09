@@ -1,0 +1,12 @@
+<% layout('layouts/generalBP')%>
+<div class="margin">
+    <h3>We matched you with 3 people!</h3>
+    <% for (let match of newMatches){%>
+        <div class="match">
+            <p><%= match.username %> </p>
+            <br>
+            <p><%= match.title %> </p>
+            <p>loves <%= match.freeTime %> </p>
+        </div>
+    <%}%>
+</div>
