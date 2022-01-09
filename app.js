@@ -128,7 +128,6 @@ app.get('/register', (req, res) => {
 
 app.get('/profile', (req, res) => {
     let user = req.user
-    console.log(user)
     res.render('./profile.ejs', {user})
 })
 
