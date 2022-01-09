@@ -98,6 +98,14 @@ app.get('/', (req, res) => {
     res.render('./home.ejs')
 })
 
+app.get('/login', (req, res) => {
+    res.render('./users/login.ejs')
+})
+
+app.post('/login', (req, res) => {
+    console.log(req)
+})
+
 app.listen(port, () => {
     console.log(`listening on : ${port}`)
 })
