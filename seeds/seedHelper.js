@@ -1,4 +1,4 @@
-data = {
+const data = {
     firstNames: ["Eloise","Aurelia","Ava","Rose","Maeve","Esme","Eleanor","Imogen","Aurora","Ophelia","Freya","Luna","Alice","Iris","Ivy","Isla","Olivia","Hazel","Astrid","Amelia","Genevieve","Charlotte","Aria","Elodie","Violet","Sienna","Cora","Nora","Ottilie","Daphne"],
     lastNames: ["Johnson","Williams","Brown","Jones","Garcia","Miller","Davis","Rodriguez","Martinez","Hernandez","Lopez","Gonzalez","Wilson","Anderson","Thomas","Taylor","Moore","Jackson","Martin","Lee","Perez","Thompson","White","Harris","Sanchez","Clark","Ramirez","Lewis","Robinson"],
     title: ["Network architect","Systems analyst","Network engineer","Wireless network engineer","Database analyst","SQL database administrator","Back-end developer","Cloud/software developer","Cloud/software applications engineer","DevOps engineer","Front-end developer","Full-stack developer","Java developer","Platform engineer","Software engineer","UI designer","UX designer","Web developer","Product designer","Data analyst","Data analytics developer","Data scientist"],
@@ -7,4 +7,4 @@ data = {
     questionTwo:["Design","Front-end developement","Back-end developement","Big data","Networking","Blockchain","Business and strategy"]
 }
 
-export {data}
+export { data }

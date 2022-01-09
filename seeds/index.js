@@ -1,10 +1,10 @@
 import mongoose from "mongoose"
-import Users from "../models/user.js";
+import { User } from "../models/user.js";
 import { data } from "./seedHelper.js"
 import dotenv from "dotenv"
-dotenv.config({ path: ".env" })
+dotenv.config({ path: "../.env" })
 
-const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/star-campsites';
+const dbUrl = process.env.DB_URL 
 
 mongoose.connect(dbUrl);
 
@@ -15,24 +15,30 @@ db.once("open", () => {
     console.log("Database connected");
 });
 
+
+// let nameInd = Math.floor(Math.random() * 28);
+// let titleInd = Math.floor(Math.random() * 20);
+// let schoolInd = Math.floor(Math.random() * 70);
+// let questionInd = Math.floor(Math.random() * 5);
+// console.log(data['firstNames'][nameInd])
+
 const seedDB = async () => {
-    await Users.deleteMany({});
-
-    let nameInd = Math.floor(Math.random() * 28);
-    let titleInd = Math.floor(Math.random() * 20);
-    let schoolInd = Math.floor(Math.random() * 70);
-    let questionInd = Math.floor(Math.random() * 5);
-
-    let firstName = data['firstName'][nameInd]
-    let lastName = data['lastName'][nameInd]
-    let username = firstName[0]+lastName
+    await User.deleteMany({});
 
     for (let i = 0; i < 15; i++) {
+        let nameInd = Math.floor(Math.random() * 28);
+        let titleInd = Math.floor(Math.random() * 20);
+        let schoolInd = Math.floor(Math.random() * 70);
+        let questionInd = Math.floor(Math.random() * 5);
+
+        let firstNames = data['firstNames'][nameInd]
+        let lastNames = data['lastNames'][nameInd]
+        let username = firstNames[0]+lastNames
         
-        const user = new Users({
+        const user = new User({
             username: username,
-            firstName: firstName,
-            lastName: lastName,
+            firstName: firstNames,
+            lastName: lastNames,
             title: data['title'][titleInd],
             school: data['school'][schoolInd],
             questionOne: data['questionOne'][questionInd],
