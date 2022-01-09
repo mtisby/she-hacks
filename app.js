@@ -98,15 +98,6 @@ app.get('/', (req, res) => {
     res.render('./home.ejs')
 })
 
-// app.all('*', (req, res, next) => {
-//     next(new ExpressError('Page Not Found', 404))
-// })
-
-// app.use((err, req, res, next) => {
-//     const { statusCode = 500, message = "something went wrong" } = err;
-//     res.status(statusCode).render('error.ejs', {err})
-// })
-
 app.listen(port, () => {
     console.log(`listening on : ${port}`)
 })
