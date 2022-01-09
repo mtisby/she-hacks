@@ -112,7 +112,7 @@ app.get('/login', (req, res) => {
     res.render('./users/login.ejs')
 })
 
-app.post('/login', (req, res) => {
+app.post('/login', passport.authenticate('local', { failureFlash: true, failureRedirect: '/login' }), (req, res) => {
     res.redirect('/profile')
 })
 
@@ -128,6 +128,7 @@ app.get('/register', (req, res) => {
 
 app.get('/profile', (req, res) => {
     let user = req.user
+    console.log(user)
     res.render('./profile.ejs', {user})
 })
 
