@@ -117,7 +117,6 @@ app.post('/login', (req, res) => {
 })
 
 app.post('/logout', (req, res) => {
-    console.log(req)
     req.logout();
     req.flash('success', "Goodbye!");
     res.redirect('/');
@@ -157,7 +156,6 @@ app.get('/matches', async (req, res) => {
 })
 
 app.post('/register', async (req, res) => {
-    console.log(req.body)
     try {
         const { firstName, lastName, username, title, school, password } = req.body;
         const user = new User({ firstName, lastName, username, title, school});
