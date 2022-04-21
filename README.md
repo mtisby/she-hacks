@@ -1,3 +1,6 @@
+## sheNetworks Legacy
+<p>sheNetworks is a web app created for the 2021 sheHacks Hackathon. sheNetworks placed 2nd for the "Best creation for women to connect with common interests". sheNetworks is now updated using modern technologies and frameworks. This repo now holds only the api, the front-end repo can be found here</p>
+
 ## 💻 What it does
 <p> sheNetworks is a web app made to help women and nonbinary folks find mentors. Our goal is to increase the representation
 of folx in technical fields that lack them. Find out more <a href="https://quiet-anchorage-71064.herokuapp.com/">here</a></p>
@@ -16,7 +19,7 @@ Clone the repository and run the following in your terminal:
 ```bash
 > npm i
 ```
-This installs all neccessary packages. Mext, run the following:
+This installs all neccessary packages. Next, run the following:
 ```bash
 > node app.js
 ```
@@ -49,7 +52,6 @@ This activates MongoDB on your local device; however, note that cloning this rep
 
 <h5>Libraries Used</h5>
 <ul>
-    <li>ejs</li>
     <li>express</li>
     <li>express session</li>
     <li>mongo</li>
