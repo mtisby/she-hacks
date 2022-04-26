@@ -4,6 +4,10 @@ import pkg from "passport-local-mongoose"
 const passportLocalMongoose = pkg
 const Schema = mongoose.Schema;
 const UserSchema = new Schema({
+    profileImg: {
+        type: String,
+        required: true
+    },
     username: {
         type: String,
         required: true
@@ -20,10 +24,6 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    school: {
-        type: String,
-        required: true
-    },
     freeTime: {
         type: String,
         required: false
@@ -33,10 +33,6 @@ const UserSchema = new Schema({
         required: false
     },
     interests: {
-        type: String,
-        required: false
-    },
-    energyLevel: {
         type: String,
         required: false
     },

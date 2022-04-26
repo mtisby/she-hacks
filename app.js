@@ -18,11 +18,13 @@ import passport from 'passport'
 import LocalStrategy from 'passport-local'
 
 /* templating dependencies */
-import methodOverride from "method-override"
+import methodOverride from "method-override";
+import bodyParser from "body-parser";
 import ejsMate from 'ejs-mate';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import flash from "connect-flash";
+import cors from 'cors';
 
 /* model */
 import { User } from './models/user.js'
@@ -78,6 +80,21 @@ const sessionConfig = {
     }
 }
 
+
+app.use(mongoSanitize({
+    replaceWith: "_"
+}))
+
+app.use(session(sessionConfig))
+
+app.use(bodyParser.json({ limit: '30mb', extended: true }));
+app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
+app.use(cors({
+    origin:'*',
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200,
+}))
+
 app.use(session(sessionConfig))
 app.use(flash());
 
@@ -93,6 +110,11 @@ app.use((req, res, next) => {
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
     next();
+})
+
+app.get('/', async(req, res) => {
+    let users = await User.find({ })
+    res.json(users)
 })
 
 app.get('/matched', async(req, res) => {
