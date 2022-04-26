@@ -50,6 +50,11 @@ const data = {
         'Go on walks', 'Play sports', 
         'Chat online', 'I\'m open to suggestions!'
     ],
+    experience:[
+        'entryLevel',
+        'associate',
+        'midSenior'
+    ],
     profileImg: [
         'https://res.cloudinary.com/dr0ofxgkz/image/upload/v1650993951/she-hacks/profile%20pictures/80E43BF1-220C-438E-A257-265FB7EC723D_1_201_a_xucln3.jpg',
         'https://res.cloudinary.com/dr0ofxgkz/image/upload/v1650993950/she-hacks/profile%20pictures/CC811E23-FA48-40D5-B2A7-0D8B95442963_1_201_a_rhcefu.jpg',

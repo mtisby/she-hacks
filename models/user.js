@@ -20,20 +20,24 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    title: {
+    profession: {
+        type: String,
+        required: true
+    },
+    experience: {
         type: String,
         required: true
     },
     freeTime: {
-        type: String,
+        type: Array,
         required: false
     },
     friends: {
-        type: String,
+        type: Array,
         required: false
     },
     interests: {
-        type: String,
+        type: Array,
         required: false
     },
 });

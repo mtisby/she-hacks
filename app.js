@@ -127,9 +127,20 @@ app.get('/matched', async(req, res) => {
     res.render('./match.ejs', { match })
 })
 
-app.post('/login', passport.authenticate('local', { failureFlash: true, failureRedirect: '/login' }), (req, res) => {
-    res.redirect('/profile')
-})
+app.post("/login", (req, res, next) => {
+    passport.authenticate("local", (err, user, info) => {
+      if (err) throw err;
+      if (!user) res.send("No User Exists");
+      else {
+        req.logIn(user, (err) => {
+          if(err){
+              res.send('yoinks')
+          }
+          res.send(user);
+        });
+      }
+    })(req, res, next);
+  });
 
 app.post('/logout', (req, res) => {
     req.logout();
@@ -162,21 +173,25 @@ app.get('/matches', async(req, res) => {
 })
 
 app.post('/register', async(req, res) => {
+    console.log('im here babes')
+    console.log(req.body)
     try {
-        const { firstName, lastName, username, title, school, password } = req.body;
-        const user = new User({ firstName, lastName, username, title, school });
+        const { firstName, lastName, username, 
+            profileImg, profession, experience, 
+            friends, interests, freeTime, password } = req.body;
+        const user = new User({ firstName, lastName, username, 
+            profileImg, profession, experience, 
+            friends, interests, freeTime });
         const registeredUser = await User.register(user, password);
         req.login(registeredUser, error => {
             if (error) {
-                return next(error)
+                res.send('yoinks')
             } else {
-                req.flash('success', 'Welcome sheNetworks')
-                res.redirect('/questionnaire/home')
+                res.send(registeredUser)
             }
         })
     } catch (e) {
-        console.log(e)
-        req.flash('error', e.message);
+        res.send('yoinks');
     }
 
 })
