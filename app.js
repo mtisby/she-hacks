@@ -129,8 +129,12 @@ app.get('/matched', async(req, res) => {
 
 app.post("/login", (req, res, next) => {
     passport.authenticate("local", (err, user, info) => {
-      if (err) throw err;
-      if (!user) res.send("No User Exists");
+      if (err) {
+          res.send(err);
+        }
+      if (!user) {
+            res.send(info);
+        }
       else {
         req.logIn(user, (err) => {
           if(err){
