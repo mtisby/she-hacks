@@ -1,6 +1,6 @@
 ## 💻 What it does
 <p> sheNetworks is a web app made to help women and nonbinary folks find mentors. Our goal is to increase the representation
-of folx in technical fields that lack them. Find out more <a href="https://quiet-anchorage-71064.herokuapp.com/">here</a></p>
+of folx in technical fields that lack them. Find out more <a href="https://shenetworks.onrender.com/">here</a></p>
 
 <ul>
     <li>Create an account</li>
